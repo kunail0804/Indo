@@ -3,6 +3,7 @@ import { customElement } from 'lit/decorators.js';
 
 import './pages/app-home';
 import './components/header';
+import './components/header-index';
 import './styles/global.css';
 import { router } from './router';
 
@@ -28,7 +29,7 @@ export class AppIndex extends LitElement {
   }
 
   render() {
-    // router config can be round in src/router.ts
+    // router config can be found in src/router.ts
     return router.render();
   }
 }

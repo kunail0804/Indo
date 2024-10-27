@@ -18,13 +18,16 @@ const baseURL: string = (import.meta as any).env.BASE_URL;
 
 export const router = new Router({
     routes: [
+      // Home route
       {
         path: resolveRouterPath(),
         title: 'Home',
         render: () => html`<app-home></app-home>`
       },
+
+      // About of the PWABuilder pwa-starter route
       {
-        path: resolveRouterPath('about'),
+        path: resolveRouterPath('app-about'),
         title: 'About',
         plugins: [
           lazy(() => import('./pages/app-about/app-about.js')),

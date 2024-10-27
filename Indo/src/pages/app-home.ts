@@ -6,94 +6,60 @@ import '@shoelace-style/shoelace/dist/components/card/card.js';
 import '@shoelace-style/shoelace/dist/components/button/button.js';
 
 import { styles } from '../styles/shared-styles';
+import '../components/header-index'; // Import the header component
+import '../components/side-menu'; // Import the side menu component
 
 @customElement('app-home')
 export class AppHome extends LitElement {
 
   // For more information on using properties and state in lit
   // check out this link https://lit.dev/docs/components/properties/
-  @property() message = 'Welcome to the PWABuilder pwa-starter!';
+  @property() message = 'Welcome to Indo!';
 
   static styles = [
     styles,
     css`
-  `];
+      main {
+        margin-top: 0px;
+        margin-left: 60px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+      }
+      section {
+        display: flex;
+        flex-direction: column;
+      }
+      sl-card {
+        min-width: 100%;
+        padding: 16px;
+      }
+
+      sl-card h2 {
+        margin-top: 0;
+      }
+    `
+  ];
 
   async firstUpdated() {
     // this method is a lifecycle even in lit
     // for more info check out the lit docs https://lit.dev/docs/components/lifecycle/
-    console.log('This is your home page');
-  }
-
-  share() {
-    if ((navigator as any).share) {
-      (navigator as any).share({
-        title: 'PWABuilder pwa-starter',
-        text: 'Check out the PWABuilder pwa-starter!',
-        url: 'https://github.com/pwa-builder/pwa-starter',
-      });
-    }
   }
 
   render() {
     return html`
-      <app-header></app-header>
+      <header-index></header-index>
+      <side-menu></side-menu> <!-- Ajoute le menu latéral -->
 
       <main>
-        <div id="welcomeBar">
-          <sl-card id="welcomeCard">
-            <div slot="header">
-              <h2>${this.message}</h2>
-            </div>
-
-            <p>
-              For more information on the PWABuilder pwa-starter, check out the
-              <a href="https://docs.pwabuilder.com/#/starter/quick-start">
-                documentation</a>.
-            </p>
-
-            <p id="mainInfo">
-              Welcome to the
-              <a href="https://pwabuilder.com">PWABuilder</a>
-              pwa-starter! Be sure to head back to
-              <a href="https://pwabuilder.com">PWABuilder</a>
-              when you are ready to ship this PWA to the Microsoft Store, Google Play
-              and the Apple App Store!
-            </p>
-
-            ${'share' in navigator
-              ? html`<sl-button slot="footer" variant="default" @click="${this.share}">
-                        <sl-icon slot="prefix" name="share"></sl-icon>
-                        Share this Starter!
-                      </sl-button>`
-              : null}
+        <section>
+          <h1>${this.message}</h1>
+          <p>Welcome in Indo. Here we are all reading mangas and webtoons from everywhere in the world !</p>
+          <sl-card>
+            <h2>To Start</h2>
+            <p>First please create an account</p>
+            <sl-button href="${resolveRouterPath('/signup')}">Sign Up</sl-button>
           </sl-card>
-
-          <sl-card id="infoCard">
-            <h2>Technology Used</h2>
-
-            <ul>
-              <li>
-                <a href="https://www.typescriptlang.org/">TypeScript</a>
-              </li>
-
-              <li>
-                <a href="https://lit.dev">lit</a>
-              </li>
-
-              <li>
-                <a href="https://shoelace.style/">Shoelace</a>
-              </li>
-
-              <li>
-                <a href="https://github.com/thepassle/app-tools/blob/master/router/README.md"
-                  >App Tools Router</a>
-              </li>
-            </ul>
-          </sl-card>
-
-          <sl-button href="${resolveRouterPath('about')}" variant="primary">Navigate to About</sl-button>
-        </div>
+        </section>
       </main>
     `;
   }
