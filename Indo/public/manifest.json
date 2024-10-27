@@ -1,10 +1,11 @@
 {
+"protocol_handlers": [{"protocol":"mailto","url":"/newEmail?to=%s"}], 
   "id": "/",
   "scope": "/",
-  "name": "PWA Starter",
+  "name": "Indo",
   "display": "standalone",
   "start_url": "/",
-  "short_name": "starter",
+  "short_name": "Indo",
   "theme_color": "#E1477E",
   "description": "This is a PWA Starter app",
   "orientation": "any",

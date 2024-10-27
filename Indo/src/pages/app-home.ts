@@ -12,47 +12,11 @@ export class AppHome extends LitElement {
 
   // For more information on using properties and state in lit
   // check out this link https://lit.dev/docs/components/properties/
-  @property() message = 'Welcome!';
+  @property() message = 'Welcome to the PWABuilder pwa-starter!';
 
   static styles = [
     styles,
     css`
-    #welcomeBar {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-
-    #welcomeCard,
-    #infoCard {
-      padding: 18px;
-      padding-top: 0px;
-    }
-
-    sl-card::part(footer) {
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    @media(min-width: 750px) {
-      sl-card {
-        width: 70vw;
-      }
-    }
-
-
-    @media (horizontal-viewport-segments: 2) {
-      #welcomeBar {
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-between;
-      }
-
-      #welcomeCard {
-        margin-right: 64px;
-      }
-    }
   `];
 
   async firstUpdated() {
