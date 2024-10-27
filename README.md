@@ -11,7 +11,7 @@ This application can be used in your phones and on your computer and your progre
 - MangaDex
 
 ## How to use
-Go check this wiki to know how to usse this application
+Go check the wiki to know how to usse this application
 
 ## Lisence
 This application is under the GNU GPL v3.0 License.
